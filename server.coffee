@@ -7,8 +7,9 @@ app.use(morgan('combined'))
 
 app.use('/', express.static(__dirname + '/dist'));
 
-router.route('/').get (req,res)->
-  console.log('hey')
+router.route('/raw').get (req,res)->
+  console.log 'raw'
+  res.end()
 
 app.listen(PORT)
 app.use('/',router)
